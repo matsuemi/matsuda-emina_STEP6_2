@@ -1,0 +1,90 @@
+.header{
+    width: 900px;
+    height: 80px;
+    background-color: pink;
+  }
+  
+  .title{
+    position: absolute;
+    top: 10px;
+    left: 330px;
+  }
+
+  #sidebar{
+    width: 250px;
+    height: 300px;
+    background-color: #7fffd4;
+    float: left;
+  }
+
+  .sidebar-position{
+    position: absolute;
+    top:70px;
+    left:20px;
+  }
+  #main{
+    width: 900px;
+    height: 300px;
+    background-color: #fec;
+    background-size: cover;
+  }
+  
+  #footer{
+    position: absolute;
+    width: 900px;
+    height: 70px;
+    background-color: #dcdcdc;
+    top:380px;
+  }
+
+  .container{
+    width:800px;
+    height:400px;
+    overflow:hidden;
+  }
+  
+  .position{
+    position: absolute;
+    top:80px;
+    float: left;
+  }
+  
+  #table{
+    position: absolute;
+    left:350px;
+    top:25px
+  }
+  
+  #table_confirm{
+    position: absolute;
+    left:400px;
+    top:70px
+  }
+  
+  .table-data{
+    width: 60%;
+  }
+  
+  #submit {
+    position: absolute;
+    top: 270px;
+    left: 850px;
+  }
+  
+  #background_btn{
+    position: absolute;
+    left: 500px;
+    bottom: 25px;
+  }
+  
+  .info{
+    position: absolute;
+    left: 90px;
+    bottom: 10px;
+  }
+  
+  .back-bnt{
+    position: absolute;
+    left: 0px;
+    bottom: 30px;
+  }
