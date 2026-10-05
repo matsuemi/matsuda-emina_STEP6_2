@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST["message"];
 } else {
     header("Location: contact.php");
+    exit;
 }
 ?>
 
@@ -62,13 +63,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </tr>
         </table>
         <form method="post" action="send.php">
-          <input type="hidden" name="name" value="<?php echo $name; ?>">
-          <input type="hidden" name="companyName" value="<?php echo $companyName; ?>">
-          <input type="hidden" name="email" value="<?php echo $email; ?>">
-          <input type="hidden" name="age" value="<?php echo $age; ?>">
-          <input type="hidden" name="message" value="<?php echo $message; ?>">
+        <input type="hidden" name="name" value="<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="companyName" value="<?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="email" value="<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="message" value="<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>">
           <div id="submit">
-            <input type="submit" value="送信">
+            <input type="submit" name="submit" value="送信">
             <div class="back-bnt">
               <input type="button" name="submit" onclick="history.back()" value="戻る">
             </div>
