@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "your_email@example.com";
     $subject = "お問い合わせありがとうございます。";
     $header = "From: your_email@example.com";
-    $body = "名前: $name\n会社名: $companyName\nメールアドレス: $email\n\n$message";
+    $body = "名前: $name\n会社名: $companyName\nメールアドレス: $email\n年齢: $age\n\nお問い合わせ内容: $message";
 
     if (mail($to, $subject, $body, $header)) {
         $message = "お問い合わせが送信されました。ありがとうございます！";
@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">

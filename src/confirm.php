@@ -28,11 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div id="sidebar">
         <div class="sidebar-position">
           <nav>
-          <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
+           <ul>
+            <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/ishiyowachan/">人気投稿</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/tarepanda/">エンジニアおすすめ商品</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/mamegoma/">エンジニアおすすめ記事</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/nyan-nyan-nyanko/">投稿ページ</a></li>
+           </ul>
           </nav>
         </div>
       </div>
@@ -41,12 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <tr>
             <th>お名前</th>  
             <td class="table-data"><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></td>
-          <tr>
+          </tr>
           <tr>
             <th>会社名</th>
             <td class="table-data"><?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?></td>
           </tr>
-          <tr>
           <tr>
             <th>メールアドレス</th>
             <td class="table-data"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></td>

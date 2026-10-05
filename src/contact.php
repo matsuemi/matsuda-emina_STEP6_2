@@ -1,3 +1,41 @@
+<?php
+$errors = [];
+
+$name = "";
+$companyName = "";
+$email = "";
+$age = "";
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"] ?? "";
+    $companyName = $_POST["companyName"] ?? "";
+    $email = $_POST["email"] ?? "";
+    $age = $_POST["age"] ?? "";
+    $message = $_POST["message"] ?? "";
+
+    if ($name === "") {
+        $errors["name"] = "お名前を入力してください。";
+    }
+
+    if ($companyName === "") {
+        $errors["companyName"] = "会社名を入力してください。";
+    }
+
+    if ($email === "") {
+        $errors["email"] = "メールアドレスを入力してください。";
+    }
+
+    if ($age === "") {
+        $errors["age"] = "年齢を入力してください。";
+    }
+
+    if ($message === "") {
+        $errors["message"] = "お問い合わせ内容を入力してください。";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,20 +51,22 @@
   </div> 
 
   <div class="container">
-    <dic class="position">
+    <div class="position">
       <div id="sidebar">
         <div class="sidebar-position">
           <nav>
-            <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
-            <li><a href="https://www.san-x.co.jp/ja/characters/ishiyowachan/">人気投稿</a></li>
-            <li><a href="https://www.san-x.co.jp/ja/characters/tarepanda/">エンジニアおすすめ商品</a></li>
-            <li><a href="https://www.san-x.co.jp/ja/characters/mamegoma/">エンジニアおすすめ記事</a></li>
-            <li><a href="https://www.san-x.co.jp/ja/characters/nyan-nyan-nyanko/">投稿ページ</a></li>
+          <ul>
+              <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
+              <li><a href="https://www.san-x.co.jp/ja/characters/ishiyowachan/">人気投稿</a></li>
+              <li><a href="https://www.san-x.co.jp/ja/characters/tarepanda/">エンジニアおすすめ商品</a></li>
+              <li><a href="https://www.san-x.co.jp/ja/characters/mamegoma/">エンジニアおすすめ記事</a></li>
+              <li><a href="https://www.san-x.co.jp/ja/characters/nyan-nyan-nyanko/">投稿ページ</a></li>
+           </ul>
           </nav>
         </div>
       </div>
       <div id="main">
-        <form method="post" action="confirm.php">
+        <form method="post" action="contact.php">
           <table border="3" id ="table">
             <tr>
               <th>お名前</th>
@@ -60,7 +100,7 @@
             </tr>
           </table>
           <div id="submit">
-          <input type="submit" value="送信" onclick="return confirmSubmit()">
+          <input type="submit" name="submit" value="送信" onclick="return confirmSubmit()">
           </div>
         </form>
       </div>
