@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div id="submit">
             <input type="submit" value="送信">
             <div class="back-bnt">
-              <input type="button" onclick="history.back()" value="戻る">
+              <input type="button" name="submit" onclick="history.back()" value="戻る">
             </div>
           </div>
         </form>
