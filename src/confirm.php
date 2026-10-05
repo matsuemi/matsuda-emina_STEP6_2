@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST["message"];
 } else {
     header("Location: contact.php");
+    exit;
 }
 ?>
 
@@ -28,11 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div id="sidebar">
         <div class="sidebar-position">
           <nav>
-          <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
+           <ul>
+            <li><a href="https://www.san-x.co.jp/ja/characters/rilakkuma/">トップページ</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/ishiyowachan/">人気投稿</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/tarepanda/">エンジニアおすすめ商品</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/mamegoma/">エンジニアおすすめ記事</a></li>
             <li><a href="https://www.san-x.co.jp/ja/characters/nyan-nyan-nyanko/">投稿ページ</a></li>
+           </ul>
           </nav>
         </div>
       </div>
@@ -41,12 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <tr>
             <th>お名前</th>  
             <td class="table-data"><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></td>
-          <tr>
+          </tr>
           <tr>
             <th>会社名</th>
             <td class="table-data"><?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?></td>
           </tr>
-          <tr>
           <tr>
             <th>メールアドレス</th>
             <td class="table-data"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></td>
@@ -61,15 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </tr>
         </table>
         <form method="post" action="send.php">
-          <input type="hidden" name="name" value="<?php echo $name; ?>">
-          <input type="hidden" name="companyName" value="<?php echo $companyName; ?>">
-          <input type="hidden" name="email" value="<?php echo $email; ?>">
-          <input type="hidden" name="age" value="<?php echo $age; ?>">
-          <input type="hidden" name="message" value="<?php echo $message; ?>">
+        <input type="hidden" name="name" value="<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="companyName" value="<?php echo htmlspecialchars($companyName, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="email" value="<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES, 'UTF-8'); ?>">
+        <input type="hidden" name="message" value="<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>">
           <div id="submit">
-            <input type="submit" value="送信">
+            <input type="submit" name="submit" value="送信">
             <div class="back-bnt">
-              <input type="button" onclick="history.back()" value="戻る">
+              <input type="button" name="submit" onclick="history.back()" value="戻る">
             </div>
           </div>
         </form>

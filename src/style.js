@@ -1,13 +1,11 @@
 function confirmSubmit() {
-
-    var table = document.getElementById('table');
+    var name = document.getElementById("name").value;
+    var companyName = document.getElementById("companyName").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var message = document.getElementById("message").value;
 
     var tableContent = "";
-    var name = document.getElementById('name').value;
-    var companyName = document.getElementById('companyName').value;
-    var email = document.getElementById('email').value;
-    var age = document.getElementById('age').value;
-    var message = document.getElementById('message').value;
 
     tableContent += 'お名前 -> ' + name + '\n';
     tableContent += '会社名 -> ' + companyName + '\n';
@@ -16,11 +14,12 @@ function confirmSubmit() {
     tableContent += 'お問い合わせ内容 -> ' + message + '\n';
 
     if (!name || !companyName || !email || !age || !message) {
-        alert("全て入力必須項目になります。");
-        return false;
+        alert("必須項目が未入力です。入力内容をご確認ください。");
+    } else {
+        return confirm("本当に送信しますか？\n\n" + tableContent);
     }
-
-    return confirm("本当に送信しますか？\n\n" + tableContent);;
+    
+    return true;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
